@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">OneAuth</string>
+    <string name="login">JUMP IN</string>
+    <string name="login_tab">LOG IN</string>
+    <string name="register_tab">REGISTER</string>
+    <string name="user_hint">Enter your email or phone</string>
+    <string name="password_hint">Enter Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="load">Loading…</string>
 </resources>
