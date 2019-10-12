@@ -256,7 +256,7 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener, 
     }
 
     private void createAccount(String email, String password) {
-        if (!validateForm(0)) {
+        if (validateForm(0)) {
             return;
         }
         showProgressDialog();
@@ -264,18 +264,21 @@ public class AuthActivity extends BaseActivity implements View.OnClickListener, 
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 hideProgressDialog();
+                startActivity(new Intent(AuthActivity.this, MainActivity.class));
+
             }
         });
     }
 
     private void signIn(String email, String password) {
-        if (!validateForm(1)) {
+        if (validateForm(1)) {
             return;
         }
         showProgressDialog();
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, task -> {
             Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
             hideProgressDialog();
+            startActivity(new Intent(this, MainActivity.class));
         });
     }
 
